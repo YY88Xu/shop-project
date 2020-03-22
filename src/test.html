@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * @param {number[]} nums
+     * @return {string}
+     */
+    var minNumber = function(nums) {
+        nums.sort(function(a,b){
+            a += "";
+            b += "";
+            let i = 0;
+            while(i<a.length&&i<b.length){
+                let tmp1 = a.charAt(i);
+                let tmp2 = b.charAt(i);
+                i++;
+                if(tmp1!=tmp2){
+                    return tmp1-tmp2;
+                }
+            }
+            debugger;
+            let tmp1 =  a.charAt(i)||a.charAt(i-1);
+            let tmp2 = b.charAt(i)||b.charAt(i-1);
+            return tmp1-tmp2;
+
+        });
+        let result = '';
+        nums.forEach(item=>{
+            result+=item;
+        })
+        return result;
+    };
+    console.log(minNumber([3,30,34,5,9]));
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+</head>
+<body>
+<div class="container">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+</body>
+<style>
+    /* 参考 https://segmentfault.com/a/1190000021398165 */
+    .container{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        border: 1px solid blue;
+    }
+    .item{
+        width: 24%;
+        height: 100px;
+        background: red;
+        margin-bottom: 10px;
+    }
+    .list{
+        width: 20%;
+        content: '';
+        width: 20%;
+    }
+    .item:last-child:nth-child(4n + 2) {
+        margin-right: calc((100% - 24%) / 3 * 2);
+    }
+
+    .item:last-child:nth-child(4n + 3) {
+        margin-right: calc((100% - 24%) / 3 * 1);
+    }
+
+</style>
+</html>
